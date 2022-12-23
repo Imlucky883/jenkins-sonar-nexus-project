@@ -1,3 +1,4 @@
+// Type Shift + Alt + F : for formatting
 pipeline {
     agent any
     stages {
@@ -12,6 +13,13 @@ pipeline {
             steps {
                 script {
                     sh 'mvn test'
+                }
+            }
+        }
+        stage('Integration Test') {
+            steps {
+                script {
+                    sh 'mvn verify -DskipUnitTests'
                 }
             }
         }
