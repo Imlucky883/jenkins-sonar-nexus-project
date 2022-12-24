@@ -23,10 +23,20 @@ pipeline {
                 }
             }
         }
-        stage('Maven build'){
-            steps{
-                script{
+        stage('Maven build') {
+            steps {
+                script {
                     sh 'mvn clean install '
+                }
+            }
+        }
+        stage('static code analysis') {
+            steps {
+                script {
+                    /* groovylint-disable-next-line NestedBlockDepth */
+                    withSonarQubeEnv(credentialsId: 'sonar-api-key') {
+                        sh ' mvn clean install sonar:sonar' // sends the artifacts to sonar after authentication
+                    }
                 }
             }
         }
