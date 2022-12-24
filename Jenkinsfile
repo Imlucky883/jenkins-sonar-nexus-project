@@ -35,7 +35,7 @@ pipeline {
                 script {
                     /* groovylint-disable-next-line NestedBlockDepth */
                     withSonarQubeEnv(credentialsId: 'sonar-api-key') {
-                        sh ' mvn clean install sonar:sonar' // sends the artifacts to sonar after authentication
+                        sh ' mvn clean package sonar:sonar' // sends the artifacts to sonar after authentication
                     }
                 }
             }
