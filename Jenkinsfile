@@ -34,7 +34,7 @@ pipeline {
             steps {
                 script {
                     /* groovylint-disable-next-line NestedBlockDepth */
-                    withSonarQubeEnv(credentialsId: 'sonarkey') {
+                    withSonarQubeEnv(credentialsId: 'sonar-authentication-key') {
                         sh ' mvn clean package sonar:sonar' // sends the artifacts to sonar after authentication
                     }
                 }
@@ -43,7 +43,7 @@ pipeline {
         stage('Quality Gate Status') {
             steps {
                 script {
-                    waitForQualityGate abortPipeline: false, credentialsId: 'sonarkey'
+                    waitForQualityGate abortPipeline: false, credentialsId: 'sonar-authentication-key'
                 }
             }
         }
