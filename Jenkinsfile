@@ -58,9 +58,9 @@ pipeline {
                             type: 'jar'
                         ]
                         ],
-                        credentialsId: 'nexus-auth',
+                        credentialsId: 'gawin',
                         groupId: 'com.example',
-                        nexusUrl: '172.17.0.2:8081',
+                        nexusUrl: '43.206.129.207:8081',
                         nexusVersion: 'nexus3',
                         protocol: 'http',
                         repository: 'demoapp-release',
