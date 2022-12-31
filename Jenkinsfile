@@ -58,7 +58,7 @@ pipeline {
                             type: 'jar'
                         ]
                         ],
-                        credentialsId: 'gawin',
+                        credentialsId: 'nexuslogin',
                         groupId: 'com.example',
                         nexusUrl: '3.235.101.29/:8081',
                         nexusVersion: 'nexus3',
