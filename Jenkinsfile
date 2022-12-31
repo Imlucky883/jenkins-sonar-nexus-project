@@ -60,10 +60,10 @@ pipeline {
                         ],
                         credentialsId: 'gawin',
                         groupId: 'com.example',
-                        nexusUrl: '43.206.129.207:8081',
+                        nexusUrl: '3.235.101.29/:8081',
                         nexusVersion: 'nexus3',
                         protocol: 'http',
-                        repository: 'demoapp-release',
+                        repository: 'vprofile-release',
                         version: '1.0.0'
                 }
             }
